@@ -16,8 +16,8 @@ const Main = ({ navigation }) => {
     useEffect(() => {
         async function loadInitialPosition() {
             const { granted } = await requestPermissionsAsync();
-
             if (granted) {
+                
                 const { coords } = await getCurrentPositionAsync({
                     enableHighAccuracy: true
                 });
