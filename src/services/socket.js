@@ -1,6 +1,8 @@
 import socketio from 'socket.io-client';
 
-const socket = socketio('https://potfolio.redirectme.net/week10', {
+//'https://potfolio.redirectme.net/week10'
+
+const socket = socketio('http://localhost:3334', {
     autoConnect: false
 });
 
