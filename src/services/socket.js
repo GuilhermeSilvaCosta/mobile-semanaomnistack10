@@ -1,9 +1,8 @@
 import socketio from 'socket.io-client';
 
-//'https://potfolio.redirectme.net/week10'
-
-const socket = socketio('http://localhost:3334', {
-    autoConnect: false
+const socket = socketio('https://potfolio.redirectme.net', {
+    autoConnect: false,
+    path: '/week10socket'
 });
 
 function subscribeToNewDevs(subscribeFunction) {
@@ -21,6 +20,12 @@ function connect(latitude, longitude, techs) {
     socket.on('message', text => {
         console.log(text);
     })
+
+    socket.on('connect_error', error => { console.log(error.message)})
+
+    socket.on('connect', () => {
+        console.log('sucesso amiguinho');
+    });
 }
 
 function disconnect() {

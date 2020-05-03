@@ -24,7 +24,13 @@ const Routes = createAppContainer(
             headerBackTitleVisible: false,
             headerStyle: {
                 backgroundColor: '#7D40E7'
-            }
+            },
+            headerTitleStyle: {
+                ...Platform.select({
+                  ios: { fontFamily: 'Arial', },
+                  android: { fontFamily: 'Roboto' },
+                }),
+            },
         }
     })
 );
